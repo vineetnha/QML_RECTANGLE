@@ -1,0 +1,38 @@
+import QtQuick
+
+Window {
+    id:rootid
+    width: 640
+    height: 480
+    visible: true
+    title: qsTr("Hello World")
+
+    property string name: "Vineet"
+    onNameChanged: {
+        console.log("Name:"+ name)
+    }
+
+    onTitleChanged: {
+        console.log("New title:" + title)
+    }
+
+    Rectangle {
+        width: 240
+        height: 240
+        color: "Blue"
+        anchors.centerIn: parent
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                rootid.name = "Kumar"
+                rootid.title = "New title"
+            }
+        }
+    }
+    Component.onCompleted: {
+        console.log("before name is :"+ name)
+    }
+
+
+}
