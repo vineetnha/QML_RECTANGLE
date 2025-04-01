@@ -1,0 +1,46 @@
+import QtQuick
+
+Window {
+    width: 640
+    height: 480
+    visible: true
+    title: qsTr("Hello World")
+
+    property var fonts: Qt.fontFamilies()
+    Text {
+        anchors.centerIn: parent
+        color: Qt.rgba(1, 0, 0, 1)
+        text: Qt.md5("hello, world")
+    }
+
+    Rectangle{
+        id:rectid
+        color: "pink"
+        height: 120
+        width: 120
+        anchors.bottom: parent.bottom
+
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                Qt.quit()
+                //Loop through the fonts
+            for(var i = 0; i < fonts.length; i++){
+                console.log("[" * + "]" + fonts[i])
+
+                //hash a string
+
+                var mName = "Vineet Kumar"
+                var mNameHash = Qt.md5(mName)
+                console.log("The hash of a name is:" + mName)
+
+            //Open Url externally
+          //  Qt.openUrlExternally("https://doc.qt.io/qt-6/qml-qtqml-qt.html#details")
+
+                //capture platform info
+                console.log("The current platform is " + Qt.platform.os)
+            }
+            }
+        }
+    }
+}
