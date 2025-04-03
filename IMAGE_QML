@@ -1,0 +1,45 @@
+import QtQuick
+
+Window {
+    width: 640
+    height: 480
+    visible: true
+    title: qsTr("Hello World")
+
+    Item{
+        id: containerItemid
+        x: 150
+        y: 50
+        width: 600
+        height: 300
+
+        Image{
+            x: 10
+            y: 50
+           width: 100
+           height: 100
+           //loading the image form working directory
+
+           source: "file:first_award.png"
+        }
+        Image{
+            x: 100
+            y: 150
+           width: 300
+           height: 200
+           //loading the image form working directory
+
+           source: "qrc:/Images/first_award.png"
+        }
+
+        Image{
+            x: 100
+            y: 150
+           width: 300
+           height: 200
+           //loading the image form working directory
+
+           source: "https://www.istockphoto.com/photo/eye-of-model-with-colorful-art-make-up-close-up-gm814423752-131755775"
+        }
+    }
+}
